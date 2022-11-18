@@ -34,6 +34,4 @@ class Session{
             return $default;
         }
     }
-
-
 }

@@ -2,8 +2,8 @@
 
 include 'libs/load.php';
 
-$user = "foobo";
-$pass = "foobo";
+$user = "test";
+$pass = isset($_GET['pass']) ? $_GET['pass'] : '';
 $result = null;
 
 if (isset($_GET['logout'])) {
@@ -16,16 +16,17 @@ if(Session::get('is_loggedin')){
     print("Welcome back, $userdata[username]");
     $result = $userdata;
 } else{
-    printf("No session found, trying to login now.");
+    printf("No session found, trying to login now. <br>");
     $result = User::login($user, $pass);
     if($result) {
         echo "Login Successfull, $result[username]";
         Session::set('is loggedin', true);
         Session::set('session_user', $result);
     } else {
-        echo "Login Failled";
+        echo "Login Failled, $user <br>";
     }
 }
+
 echo <<<EOL
 <br><br><a href="logintest.php?logout">Logout</a>
 EOL;
