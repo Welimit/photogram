@@ -20,7 +20,7 @@ if(Session::get('is_loggedin')){
     $result = User::login($user, $pass);
     if($result) {
         echo "Login Successfull, $result[username]";
-        Session::set('is loggedin', true);
+        Session::set('is_loggedin', true);
         Session::set('session_user', $result);
     } else {
         echo "Login Failled, $user <br>";

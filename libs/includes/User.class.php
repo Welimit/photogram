@@ -23,12 +23,7 @@ class User
       return $error;
     }
 
-    public function __construct($user){
-      $this->conn = Database::getConnection();
-      $this->conn->query();
-    }
-
-    public static function login( $user, $pass){
+    public static function login( $user, $pass){ 
       $query = "SELECT * FROM `addons` WHERE `username` = '$user'";
       $conn = Database::getConnection();
       $result = $conn->query($query);
@@ -44,4 +39,38 @@ class User
       
     }
 
+    public function __construct($username){
+      $this->conn = Database::getConnection();
+      $this->conn->query();
+      $this->username = $username;
+
+
+    }
+
+    public function authenticate(){
+
+    }
+
+    public function setBio()
+    {
+    
+    }
+
+    public function getBio()
+    {
+    
+    }
+
+    public function setAvatar()
+    {
+    
+    }
+
+    public function getAvatar()
+    {
+    
+    }
 }
+
+
+

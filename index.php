@@ -12,7 +12,7 @@
     </header>
     <main>
       <? load_template('_calltoaction'); ?>
-      <? include('../phpapp/_templates/_calltoaction.php'); ?>
+      <? load_template('_photogram'); ?>
       <?load_template('_footer'); ?>
     </main>
     <script src="../phpapp/assets/dist/js/bootstrap.bundle.min.js"></script>

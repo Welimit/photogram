@@ -6,10 +6,10 @@ class Database
     public static function getConnection(){
 
     if(Database::$conn == null) {
-      $servername = "localhost";
-      $user = "root";
-      $pass = "theteam@We15";
-      $dbname = "authdb";
+      $servername = get_config('db_server');
+      $user = get_config('db_username');
+      $pass = get_config('db_password');
+      $dbname = get_config('db_name');
       
       //Create Connection
       $conn = new mysqli($servername, $user, $pass, $dbname );
