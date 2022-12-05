@@ -2,7 +2,7 @@
 
 include 'libs/load.php';
 
-$user = "test";
+$user = "happy";
 $pass = isset($_GET['pass']) ? $_GET['pass'] : '';
 $result = null;
 
@@ -11,17 +11,19 @@ if (isset($_GET['logout'])) {
     die("Session Destroyed, <a href='logintest.php'>Login Again</a>");
 }
 
-if(Session::get('is_loggedin')){
-    $userdata = Session::get('session_user');
-    print("Welcome back, $userdata[username]");
-    $result = $userdata;
+if(Session::get('is_loggedin')) {
+    $username = Session::get('session_username');
+    $userobj = new User($username);
+    print("Welcome back ". $userobj->getAvatar());
 } else{
     printf("No session found, trying to login now. <br>");
     $result = User::login($user, $pass);
+
     if($result) {
-        echo "Login Successfull, $result[username]";
+        $userobj = new User($user);
+        echo "Login Successfull", $userobj->getUsername();
         Session::set('is_loggedin', true);
-        Session::set('session_user', $result);
+        Session::set('session_username', $result);
     } else {
         echo "Login Failled, $user <br>";
     }
