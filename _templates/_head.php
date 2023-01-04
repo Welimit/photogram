@@ -6,9 +6,9 @@
     <meta name="generator" content="Hugo 0.101.0">
     <title>We astra</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
-    <link href="../../phpapp/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../phpapp/css/login.css" rel="stylesheet">
-    <link href="../../phpapp/css/signup.css" rel="stylesheet">
+    <link href="<?=get_config('base_path')?>assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=get_config('base_path')?>css/login.css" rel="stylesheet">
+    <link href="<?=get_config('base_path')?>css/signup.css" rel="stylesheet">
     <!-- function for link css file -->
 
     <style>

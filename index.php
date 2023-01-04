@@ -15,6 +15,6 @@
       <? load_template('_photogram'); ?>
       <?load_template('_footer'); ?>
     </main>
-    <script src="../phpapp/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=get_config('base_path')?>assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -13,7 +13,7 @@
       <?load_template('_login'); ?>
     </main>
       <?load_template('_footer'); ?>
-    <script src="../phpapp/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=get_config('base_path')?>assets/dist/js/bootstrap.bundle.min.js"></script>
 
   </body>
 </html>

@@ -6,7 +6,10 @@
     include_once 'libs/includes/UserSession.class.php';
 
     global $__site_config;
-    $__site_config = file_get_contents($_SERVER ['DOCUMENT_ROOT'].'/../photogram/config.json');
+    // global $__base_path;
+
+    $__site_config = file_get_contents($_SERVER ['DOCUMENT_ROOT'].'/../photogramconfig.json');
+    // $__base_path = get_config('base_path');
 
     Session::start();
 
@@ -23,7 +26,7 @@
 
     function load_template ($name) {
 
-        include $_SERVER ['DOCUMENT_ROOT']."/phpapp/_templates/$name.php";
+        include $_SERVER['DOCUMENT_ROOT'] . get_config('base_path'). "_templates/$name.php";
     }
 
     function validate_credentials($username, $password)
